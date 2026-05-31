@@ -23,6 +23,8 @@ public class TokenResource {
 
     @POST
     @Path("/token")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response generateToken(TokenRequest request) {
 
         if (!authService.isValid(request.clientId(), request.clientSecret())) {
