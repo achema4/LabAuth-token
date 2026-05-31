@@ -25,6 +25,7 @@ public class TokenResource {
         this.authService = authService;
     }
 
+    @Path("token")
     @POST
     public Response generate(TokenRequest request) {
 
@@ -42,5 +43,17 @@ public class TokenResource {
         return Response.ok(
                 new TokenResponse(jwt, 3600)
         ).build();
+    }
+
+    @POST
+    @Path("/token")
+    public Response generate(TokenRequest request) {
+        return Response.ok("token real").build();
+    }
+
+    @GET
+    @Path("/prueba")
+    public Response prueba() {
+        return Response.ok("ok prueba").build();
     }
 }
