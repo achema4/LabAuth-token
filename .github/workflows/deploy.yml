@@ -14,27 +14,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Build Quarkus app
+        working-directory: token
+        run: ./mvnw clean package -DskipTests
+
       - name: Build image
-        run: |
-          cd token
-          podman build --no-cache -t localhost/token-api:1.0 .
+        working-directory: token
+        run: podman build --no-cache -t localhost/token-api:1.0 .
 
       - name: Save image
-        run: |
-          podman save localhost/token-api:1.0 -o token-api.tar
+        run: podman save localhost/token-api:1.0 -o token-api.tar
 
       - name: Import into k3s
-        run: |
-          sudo k3s ctr images import token-api.tar
+        run: sudo k3s ctr images import token-api.tar
 
       - name: Apply manifests
-        run: |
-          kubectl apply -f k8s/
+        run: kubectl apply -f k8s/
 
       - name: Restart deployment
-        run: |
-          kubectl rollout restart deployment token-api -n cqrs-lab
+        run: kubectl rollout restart deployment token-api -n cqrs-lab
 
       - name: Wait rollout
-        run: |
-          kubectl rollout status deployment/token-api -n cqrs-lab
+        run: kubectl rollout status deployment/token-api -n cqrs-lab
