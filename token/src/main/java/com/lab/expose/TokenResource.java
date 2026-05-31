@@ -7,6 +7,8 @@ import jakarta.ws.rs.core.Response;
 import java.time.Duration;
 import java.util.Set;
 
+import java.com.lab.service.ClientAuthService;
+
 @Path("/token")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
