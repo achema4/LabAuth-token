@@ -13,7 +13,7 @@ import com.lab.dto.TokenRequest;
 
 import jakarta.enterprise.context.ApplicationScoped;
 
-@Path("/token")
+@Path("/auth")
 @ApplicationScoped
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
@@ -27,7 +27,7 @@ public class TokenResource {
 
     @Path("/token")
     @POST
-    public Response generate(TokenRequest request) {
+    public Response generateToken(TokenRequest request) {
 
         if (!authService.isValid(request.clientId(), request.clientSecret())) {
             return Response.status(Response.Status.UNAUTHORIZED)
@@ -47,7 +47,7 @@ public class TokenResource {
 
     @POST
     @Path("/test")
-    public Response generate(TokenRequest request) {
+    public Response generateTest(TokenRequest request) {
         return Response.ok("token real").build();
     }
 
