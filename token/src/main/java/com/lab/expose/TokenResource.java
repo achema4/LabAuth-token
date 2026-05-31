@@ -11,8 +11,10 @@ import com.lab.service.ClientAuthService;
 import com.lab.dto.TokenResponse;
 import com.lab.dto.TokenRequest;
 
+import jakarta.enterprise.context.ApplicationScoped;
 
 @Path("/token")
+@ApplicationScoped
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class TokenResource {
