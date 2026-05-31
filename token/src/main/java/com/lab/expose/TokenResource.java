@@ -18,16 +18,15 @@ import jakarta.inject.Inject;
 @ApplicationScoped
 public class TokenResource {
 
-    @Inject  
+    @Inject
     ClientAuthService authService;
 
-    @Path("/token")
     @POST
+    @Path("/token")
     public Response generateToken(TokenRequest request) {
 
         if (!authService.isValid(request.clientId(), request.clientSecret())) {
-            return Response.status(Response.Status.UNAUTHORIZED)
-                    .build();
+            return Response.status(Response.Status.UNAUTHORIZED).build();
         }
 
         String jwt = Jwt.issuer("token-api")
@@ -36,17 +35,13 @@ public class TokenResource {
                 .expiresIn(Duration.ofHours(1))
                 .sign();
 
-        return Response.ok(
-                new TokenResponse(jwt, 3600)
-        ).build();
+        return Response.ok(new TokenResponse(jwt, 3600)).build();
     }
 
     @POST
     @Path("/test")
     public Response generateTest(TokenRequest request) {
-      System.out.println("token Test arrived");
-      
-        return Response.ok("token real").build();
+        return Response.ok("ok").build();
     }
 
     @GET
