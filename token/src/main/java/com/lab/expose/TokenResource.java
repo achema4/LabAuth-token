@@ -12,6 +12,7 @@ import com.lab.dto.TokenResponse;
 import com.lab.dto.TokenRequest;
 
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
 @Path("/auth")
 @ApplicationScoped
