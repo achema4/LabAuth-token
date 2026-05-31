@@ -1,4 +1,4 @@
-package com.lab.expose;
+package com.lab;
 import io.smallrye.jwt.build.Jwt;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
