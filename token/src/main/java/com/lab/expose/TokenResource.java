@@ -8,6 +8,8 @@ import java.time.Duration;
 import java.util.Set;
 
 import com.lab.service.ClientAuthService;
+import com.lab.dto.TokenResource;
+import com.lab.dto.TokenRequest;
 
 
 @Path("/token")
