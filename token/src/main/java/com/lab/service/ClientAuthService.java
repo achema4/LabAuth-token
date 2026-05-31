@@ -1,3 +1,4 @@
+package com.lab.service;
 import jakarta.enterprise.context.ApplicationScoped;
 import java.util.Map;
 
