@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: token-api
+  labels:
+    app: token-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: token-api
+  template:
+    metadata:
+      labels:
+        app: token-api
+    spec:
+      containers:
+        - name: token-api
+          image: localhost/token-api:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
