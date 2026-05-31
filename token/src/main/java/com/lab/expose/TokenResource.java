@@ -25,7 +25,7 @@ public class TokenResource {
         this.authService = authService;
     }
 
-    @Path("token")
+    @Path("/token")
     @POST
     public Response generate(TokenRequest request) {
 
