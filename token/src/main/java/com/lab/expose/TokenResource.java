@@ -15,8 +15,6 @@ import jakarta.enterprise.context.ApplicationScoped;
 
 @Path("/auth")
 @ApplicationScoped
-@Consumes(MediaType.APPLICATION_JSON)
-@Produces(MediaType.APPLICATION_JSON)
 public class TokenResource {
 
     private final ClientAuthService authService;
