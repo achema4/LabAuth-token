@@ -46,7 +46,7 @@ public class TokenResource {
     @POST
     @Path("/test")
     public Response generateTest(TokenRequest request) {
-      System.out.println("token Test arrived")
+      System.out.println("token Test arrived");
       
         return Response.ok("token real").build();
     }
