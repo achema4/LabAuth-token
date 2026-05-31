@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: token-api
-          image: localhost/token-api:latest
+          image: localhost/token-api:1.0
           imagePullPolicy: Never
           ports:
             - containerPort: 8080
