@@ -46,7 +46,7 @@ public class TokenResource {
     }
 
     @POST
-    @Path("/token")
+    @Path("/test")
     public Response generate(TokenRequest request) {
         return Response.ok("token real").build();
     }
