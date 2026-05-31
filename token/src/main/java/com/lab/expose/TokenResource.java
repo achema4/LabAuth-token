@@ -17,7 +17,8 @@ import jakarta.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public class TokenResource {
 
-    private final ClientAuthService authService;
+    @Inject  
+    ClientAuthService authService;
 
     public TokenResource(ClientAuthService authService) {
         this.authService = authService;
