@@ -21,10 +21,6 @@ public class TokenResource {
     @Inject  
     ClientAuthService authService;
 
-    public TokenResource(ClientAuthService authService) {
-        this.authService = authService;
-    }
-
     @Path("/token")
     @POST
     public Response generateToken(TokenRequest request) {
