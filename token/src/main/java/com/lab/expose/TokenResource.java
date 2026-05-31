@@ -1,4 +1,4 @@
-package com.lab;
+package com.lab.expose;
 import io.smallrye.jwt.build.Jwt;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -6,6 +6,8 @@ import jakarta.ws.rs.core.Response;
 
 import java.time.Duration;
 import java.util.Set;
+
+import com.lab.service.ClientAuthService;
 
 
 @Path("/token")
