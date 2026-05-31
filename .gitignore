@@ -1,0 +1,55 @@
+# =========================
+# Docker / Podman artifacts
+# =========================
+*.tar
+*.tar.*
+*.oci
+*.img
+
+# Docker / Podman metadata
+.dockerignore
+
+# =========================
+# Container build cache
+# =========================
+*.log
+container.log
+
+# =========================
+# Java / Quarkus / Maven
+# =========================
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Quarkus build output
+.quarkus/
+.quarkus-dev/
+quarkus.log
+
+# Maven
+.mvn/
+!mvnw
+!mvnw.cmd
+
+# =========================
+# IDEs
+# =========================
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# =========================
+# OS junk
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Kubernetes / local overrides
+# =========================
+*.kubeconfig
