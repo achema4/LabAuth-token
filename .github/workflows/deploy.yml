@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: [self-hosted, lab, k3s]
+    runs-on: [self-hosted, token]
 
     steps:
       - name: Checkout
