@@ -37,6 +37,13 @@ jobs:
           kubectl create namespace cqrs-lab --dry-run=client -o yaml | kubectl apply -f -
           kubectl apply -f k8s/deployment.yaml
           kubectl apply -f k8s/service.yaml
+          
+      - name: Debug manifests
+        run: |
+          pwd
+          ls -la
+          ls -la k8s
+          cat k8s/deployment.yaml
 
       - name: Update deployment image
         run: |
